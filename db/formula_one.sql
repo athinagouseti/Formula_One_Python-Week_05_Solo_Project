@@ -5,7 +5,7 @@ DROP TABLE IF EXISTS teams;
 
 
 CREATE TABLE teams (
-    id SERIAL PRIMARY KEY,
+    id INT PRIMARY KEY,
     constructor VARCHAR,
     engine_supplier VARCHAR,
     chassis VARCHAR,
@@ -21,7 +21,7 @@ CREATE TABLE drivers (
 );
 
 CREATE TABLE grand_prix (
-    round SERIAL PRIMARY KEY,
+    round INT PRIMARY KEY,
     name VARCHAR,
     circuit VARCHAR,
     date VARCHAR
@@ -37,13 +37,55 @@ CREATE TABLE race_result (
     PRIMARY KEY(racing_number, grand_prix_round)
 );
 
+INSERT INTO teams(id, constructor, engine_supplier, chassis, engine_model, nationality) VALUES (1, 'Alfa Romeo', 'Ferrari', 'C41', '065/6', 'Switzerland');
+INSERT INTO teams(id, constructor, engine_supplier, chassis, engine_model, nationality) VALUES (2, 'AlphaTauri', 'Honda', 'AT02', 'RA621H', 'Italy');
+INSERT INTO teams(id, constructor, engine_supplier, chassis, engine_model, nationality) VALUES (3, 'Alpine', 'Renault', 'A521', 'E-Tech 20B', 'France');
+INSERT INTO teams(id, constructor, engine_supplier, chassis, engine_model, nationality) VALUES (4, 'Aston Martin', 'Mercedes', 'AMR21', 'M12', 'United Kingdom');
+INSERT INTO teams(id, constructor, engine_supplier, chassis, engine_model, nationality) VALUES (5, 'Ferrari', 'Ferrari', 'SF21', '065/6', 'Italy');
+INSERT INTO teams(id, constructor, engine_supplier, chassis, engine_model, nationality) VALUES (6, 'Haas', 'Ferrari', 'VF-21', '065/6', 'United States');
+INSERT INTO teams(id, constructor, engine_supplier, chassis, engine_model, nationality) VALUES (7, 'McLaren', 'Mercedes', 'MCL35M', 'M12', 'United Kingdom');
+INSERT INTO teams(id, constructor, engine_supplier, chassis, engine_model, nationality) VALUES (8, 'Mercedes', 'Mercedes', 'F1 W12', 'M12', 'Germany');
+INSERT INTO teams(id, constructor, engine_supplier, chassis, engine_model, nationality) VALUES (9, 'Red Bull', 'Honda', 'RB16B', 'RA61H', 'Austria');
+INSERT INTO teams(id, constructor, engine_supplier, chassis, engine_model, nationality) VALUES (10, 'Williams', 'Mercedes', 'FW43B', 'M12', 'United Kingdom'); 
+
+INSERT INTO drivers (racing_number, name, nationality, team_id) VALUES (7, 'Kimi Räikkönen', 'Finland', 1);
+INSERT INTO drivers (racing_number, name, nationality, team_id) VALUES (88, 'Robert Kubica', 'Poland', 1);
+INSERT INTO drivers (racing_number, name, nationality, team_id) VALUES (99, 'Antonio Giovinazzi', 'Italy', 1);
+INSERT INTO drivers (racing_number, name, nationality, team_id) VALUES (10, 'Pierre Gasly', 'France', 2);
+INSERT INTO drivers (racing_number, name, nationality, team_id) VALUES (22, 'Yuki Tsunoda', 'Japan', 2);
+INSERT INTO drivers (racing_number, name, nationality, team_id) VALUES (14, 'Fernando Alonso', 'Spain', 3);
+INSERT INTO drivers (racing_number, name, nationality, team_id) VALUES (31, 'Esteban Ocon', 'France', 3);
+INSERT INTO drivers (racing_number, name, nationality, team_id) VALUES (5, 'Sebastian Vettel', 'Germany', 4);
+INSERT INTO drivers (racing_number, name, nationality, team_id) VALUES (18, 'Lance Stroll', 'Canada', 4);
+INSERT INTO drivers (racing_number, name, nationality, team_id) VALUES (16, 'Charles Leclerc', 'France', 5);
+INSERT INTO drivers (racing_number, name, nationality, team_id) VALUES (55, 'Carlos Sainz', 'Spain', 5);
+INSERT INTO drivers (racing_number, name, nationality, team_id) VALUES (9, 'Nikita Mazepin', 'Russia', 6);
+INSERT INTO drivers (racing_number, name, nationality, team_id) VALUES (47, 'Mick Schumacher', 'Germany', 6);
+INSERT INTO drivers (racing_number, name, nationality, team_id) VALUES (3, 'Daniel Ricciardo', 'Australia', 7);
+INSERT INTO drivers (racing_number, name, nationality, team_id) VALUES (4, 'Lando Norris', 'United Kingdom', 7);
+INSERT INTO drivers (racing_number, name, nationality, team_id) VALUES (44, 'Lewis Hamilton', 'United Kingdom', 8);
+INSERT INTO drivers (racing_number, name, nationality, team_id) VALUES (77, 'Valtteri Bottas', 'Finland', 8);
+INSERT INTO drivers (racing_number, name, nationality, team_id) VALUES (11, 'Sergio Perez', 'Mexico', 9);
+INSERT INTO drivers (racing_number, name, nationality, team_id) VALUES (33, 'Max Verstappen', 'Netherlands', 9);
+INSERT INTO drivers (racing_number, name, nationality, team_id) VALUES (6, 'Nicholas Latifi', 'Canada', 10);
+INSERT INTO drivers (racing_number, name, nationality, team_id) VALUES (63, 'George Russell', 'United Kingdom', 10);
 
 
-
-
-
-
-
+INSERT INTO grand_prix (round, name, circuit, date) VALUES (1, 'Bahrain Grand Prix', 'Bahrain International Circuit', '28th March 2021');
+INSERT INTO grand_prix (round, name, circuit, date) VALUES (2, 'Emilia Romagna Grand Prix', 'Imola Circuit', '18th April 2021');
+INSERT INTO grand_prix (round, name, circuit, date) VALUES (3, 'Portuguese Grand Prix', 'Algarve International Circuit', '2nd May 2021');
+INSERT INTO grand_prix (round, name, circuit, date) VALUES (4, 'Spanish Grand Prix', 'Circuit De Barcelona-Catalunya', '9th May 2021');
+INSERT INTO grand_prix (round, name, circuit, date) VALUES (5, 'Monaco Grand Prix', 'Circuit de Monaco', '23rd May 2021');
+INSERT INTO grand_prix (round, name, circuit, date) VALUES (6, 'Azerbaijan Grand Prix', 'Baku City Circuit', '6th June 2021');
+INSERT INTO grand_prix (round, name, circuit, date) VALUES (7, 'French Grand Prix', 'Circuit Paul Ricard', '20th June 2021');
+INSERT INTO grand_prix (round, name, circuit, date) VALUES (8, 'Styrian Grand Prix', 'Red Bull Ring', '27 June 2021');
+INSERT INTO grand_prix (round, name, circuit, date) VALUES (9, 'Austrian Grand Prix', 'Red Bull Ring', '4 July 2021');
+INSERT INTO grand_prix (round, name, circuit, date) VALUES (10, 'Biritsh Grand Prix', 'Silverstone Circuit', '18 July 2021');
+INSERT INTO grand_prix (round, name, circuit, date) VALUES (11, 'Hungarian Grand Prix', 'Hungaroring', '1 August 2021');
+INSERT INTO grand_prix (round, name, circuit, date) VALUES (12, 'Belgian Grand Prix', 'Circuit de Spa-Francochamps', '29 August 2021');
+INSERT INTO grand_prix (round, name, circuit, date) VALUES (13, 'Dutch Grand Prix', 'Circuit Zandvoort', '5 September 2021');
+INSERT INTO grand_prix (round, name, circuit, date) VALUES (14, 'Italian Grand Prix', 'Monza Circuit', '12 September 2021');
+INSERT INTO grand_prix (round, name, circuit, date) VALUES (15, 'Russian Grand Prix', 'Sochi Autodrom', '26 September 2021');
 
 
 
