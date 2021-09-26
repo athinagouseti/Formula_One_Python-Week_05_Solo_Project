@@ -71,13 +71,13 @@ INSERT INTO drivers (racing_number, name, nationality, team_id) VALUES (6, 'Nich
 INSERT INTO drivers (racing_number, name, nationality, team_id) VALUES (63, 'George Russell', 'United Kingdom', 10);
 
 
-INSERT INTO grand_prix (round, name, circuit, date) VALUES (1, 'Bahrain Grand Prix', 'Bahrain International Circuit', '28th March 2021');
-INSERT INTO grand_prix (round, name, circuit, date) VALUES (2, 'Emilia Romagna Grand Prix', 'Imola Circuit', '18th April 2021');
-INSERT INTO grand_prix (round, name, circuit, date) VALUES (3, 'Portuguese Grand Prix', 'Algarve International Circuit', '2nd May 2021');
-INSERT INTO grand_prix (round, name, circuit, date) VALUES (4, 'Spanish Grand Prix', 'Circuit De Barcelona-Catalunya', '9th May 2021');
-INSERT INTO grand_prix (round, name, circuit, date) VALUES (5, 'Monaco Grand Prix', 'Circuit de Monaco', '23rd May 2021');
-INSERT INTO grand_prix (round, name, circuit, date) VALUES (6, 'Azerbaijan Grand Prix', 'Baku City Circuit', '6th June 2021');
-INSERT INTO grand_prix (round, name, circuit, date) VALUES (7, 'French Grand Prix', 'Circuit Paul Ricard', '20th June 2021');
+INSERT INTO grand_prix (round, name, circuit, date) VALUES (1, 'Bahrain Grand Prix', 'Bahrain International Circuit', '28 March 2021');
+INSERT INTO grand_prix (round, name, circuit, date) VALUES (2, 'Emilia Romagna Grand Prix', 'Imola Circuit', '18 April 2021');
+INSERT INTO grand_prix (round, name, circuit, date) VALUES (3, 'Portuguese Grand Prix', 'Algarve International Circuit', '2 May 2021');
+INSERT INTO grand_prix (round, name, circuit, date) VALUES (4, 'Spanish Grand Prix', 'Circuit De Barcelona-Catalunya', '9 May 2021');
+INSERT INTO grand_prix (round, name, circuit, date) VALUES (5, 'Monaco Grand Prix', 'Circuit de Monaco', '23 May 2021');
+INSERT INTO grand_prix (round, name, circuit, date) VALUES (6, 'Azerbaijan Grand Prix', 'Baku City Circuit', '6 June 2021');
+INSERT INTO grand_prix (round, name, circuit, date) VALUES (7, 'French Grand Prix', 'Circuit Paul Ricard', '20 June 2021');
 INSERT INTO grand_prix (round, name, circuit, date) VALUES (8, 'Styrian Grand Prix', 'Red Bull Ring', '27 June 2021');
 INSERT INTO grand_prix (round, name, circuit, date) VALUES (9, 'Austrian Grand Prix', 'Red Bull Ring', '4 July 2021');
 INSERT INTO grand_prix (round, name, circuit, date) VALUES (10, 'Biritsh Grand Prix', 'Silverstone Circuit', '18 July 2021');
@@ -88,10 +88,24 @@ INSERT INTO grand_prix (round, name, circuit, date) VALUES (14, 'Italian Grand P
 INSERT INTO grand_prix (round, name, circuit, date) VALUES (15, 'Russian Grand Prix', 'Sochi Autodrom', '26 September 2021');
 
 
-
-
-
-
-
-
-
+-- Bahrain GP
+INSERT INTO race_result (racing_number, grand_prix_round, position, fastest_lap, status, sprint_position) VALUES (44, 1, 1, FALSE, NULL, NULL);
+INSERT INTO race_result (racing_number, grand_prix_round, position, fastest_lap, status, sprint_position) VALUES (33, 1, 2, FALSE, NULL, NULL);
+INSERT INTO race_result (racing_number, grand_prix_round, position, fastest_lap, status, sprint_position) VALUES (77, 1, 3, TRUE, NULL, NULL);
+INSERT INTO race_result (racing_number, grand_prix_round, position, fastest_lap, status, sprint_position) VALUES (4, 1, 4, FALSE, NULL, NULL);
+INSERT INTO race_result (racing_number, grand_prix_round, position, fastest_lap, status, sprint_position) VALUES (11, 1, 5, FALSE, NULL, NULL);
+INSERT INTO race_result (racing_number, grand_prix_round, position, fastest_lap, status, sprint_position) VALUES (55, 1, 8, FALSE, NULL, NULL);
+INSERT INTO race_result (racing_number, grand_prix_round, position, fastest_lap, status, sprint_position) VALUES (16, 1, 6, FALSE, NULL, NULL);
+INSERT INTO race_result (racing_number, grand_prix_round, position, fastest_lap, status, sprint_position) VALUES (3, 1, 7, FALSE, NULL, NULL);
+INSERT INTO race_result (racing_number, grand_prix_round, position, fastest_lap, status, sprint_position) VALUES (10, 1, 17, FALSE, NULL, NULL);
+INSERT INTO race_result (racing_number, grand_prix_round, position, fastest_lap, status, sprint_position) VALUES (14, 1, NULL, FALSE, 'Ret', NULL);
+INSERT INTO race_result (racing_number, grand_prix_round, position, fastest_lap, status, sprint_position) VALUES (31, 1, 13, FALSE, NULL, NULL);
+INSERT INTO race_result (racing_number, grand_prix_round, position, fastest_lap, status, sprint_position) VALUES (5, 1, 15, FALSE, NULL, NULL);
+INSERT INTO race_result (racing_number, grand_prix_round, position, fastest_lap, status, sprint_position) VALUES (18, 1, 10, FALSE, NULL, NULL);
+INSERT INTO race_result (racing_number, grand_prix_round, position, fastest_lap, status, sprint_position) VALUES (22, 1, 9, FALSE, NULL, NULL);
+INSERT INTO race_result (racing_number, grand_prix_round, position, fastest_lap, status, sprint_position) VALUES (63, 1, 14, FALSE, NULL, NULL);
+INSERT INTO race_result (racing_number, grand_prix_round, position, fastest_lap, status, sprint_position) VALUES (6, 1, 18, FALSE, NULL, NULL);
+INSERT INTO race_result (racing_number, grand_prix_round, position, fastest_lap, status, sprint_position) VALUES (7, 1, 11, FALSE, NULL, NULL);
+INSERT INTO race_result (racing_number, grand_prix_round, position, fastest_lap, status, sprint_position) VALUES (99, 1, 12, FALSE, NULL, NULL);
+INSERT INTO race_result (racing_number, grand_prix_round, position, fastest_lap, status, sprint_position) VALUES (47, 1, 16, FALSE, NULL, NULL);
+INSERT INTO race_result (racing_number, grand_prix_round, position, fastest_lap, status, sprint_position) VALUES (9, 1, NULL, FALSE, 'Ret', NULL);

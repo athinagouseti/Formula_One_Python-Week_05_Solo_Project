@@ -17,7 +17,7 @@ def select_all():
     results = run_sql(sql)
 
     for row in results:
-        team = team_repository.select(row['id'])
+        team = team_repository.select(row['team_id'])
         driver = Driver(row['racing_number'], row['name'], row['nationality'], team)
         drivers.append(driver)
     return drivers
