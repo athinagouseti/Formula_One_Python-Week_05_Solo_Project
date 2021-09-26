@@ -1,7 +1,8 @@
 class Driver:
 
-    def __init__(self, name, championship_points, team, id = None):
+    def __init__(self, racing_number, name, nationality, team):
+        self.racing_number = racing_number
         self.name = name
-        self.championship_points = championship_points
+        self.nationality = nationality
         self.team = team
-        self.id = id
+    
