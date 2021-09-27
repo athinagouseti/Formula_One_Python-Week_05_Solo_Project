@@ -14,6 +14,7 @@
         <th>Status</th>
         <th>Sprint Position</th>
         <th></th>
+        <th></th>
     </tr>
     {% for race_result in race_results %}
         <tr>
@@ -25,6 +26,7 @@
             <td>{{ race_result.fastest_lap }}</td>
             <td>{{ race_result.status }}</td>
             <td>{{ race_result.sprint_position }}</td>
+            <td><button type = "submit"><a href="/race_results/{{ race_result.driver.racing_number }}/{{ race_result.grand_prix.round }}/edit">Edit Race Result</a></button></td> 
             <td>
                 <div class="buttons">
                     <form class = "delete-form" action = "/race_results/{{ race_result.driver.racing_number }}/{{ race_result.grand_prix.round }}/delete" method = "POST">

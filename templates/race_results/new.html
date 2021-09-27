@@ -25,6 +25,7 @@
     <div>
         <label for = "position">Position</label>
         <select id = "position" name = "position" placeholder = "Position" >
+            <option value = ""></option>
             {% for number in range(1, 21) %}
             <option value = "{{ number }}">{{ number }}</option>
             {% endfor %}

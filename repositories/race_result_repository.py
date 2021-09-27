@@ -15,15 +15,17 @@ def save(race_result):
     results = run_sql(sql, values)
     return race_result
 
-# def select(id):
-#     team = None
-#     sql = "SELECT * FROM teams WHERE id = %s"
-#     values = [id]
-#     result = run_sql(sql, values)[0]
+def select(racing_number, round):
+    race_result = None
+    sql = "SELECT * FROM race_results WHERE racing_number = %s AND grand_prix_round = %s"
+    values = [racing_number, round]
+    result = run_sql(sql, values)[0]
 
-#     if result is not None:
-#         team = Team(result['id'], result['constructor'], result['engine_supplier'], result['chassis'], result['engine_model'], result['nationality'] )
-#     return team
+    if result is not None:
+        driver = driver_repository.select(racing_number)
+        grand_prix = grand_prix_repository.select(round)
+        race_result = Race_Result(driver, grand_prix, result['position'], result['fastest_lap'], result['status'], result['sprint_position'])
+    return race_result
 
 def select_all():
     race_results = []
@@ -47,5 +49,5 @@ def delete(racing_number, round):
 
 def update(race_result):
     sql = "UPDATE race_results SET (racing_number, grand_prix_round, position, fastest_lap, status, sprint_position) = (%s, %s, %s, %s, %s, %s) WHERE racing_number = %s AND grand_prix_round = %s"
-    values = [race_result.racing_number, race_result.grand_prix_round, race_result.position, race_result.fastest_lap, race_result.status, race_result.sprint_position]
+    values = [race_result.driver.racing_number, race_result.grand_prix.round, race_result.position, race_result.fastest_lap, race_result.status, race_result.sprint_position, race_result.driver.racing_number, race_result.grand_prix.round]
     run_sql(sql, values)
