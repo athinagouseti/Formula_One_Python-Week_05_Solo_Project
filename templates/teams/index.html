@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Teams</h1>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Constructor</th>
+        <th>Engine Supplier</th>
+        <th>Chassis</th>
+        <th>Engine Model</th>
+        <th>Nationality</th>
+    </tr>
+    {% for team in teams %}
+        <tr>
+            <td>{{ team.id }}</td>
+            <td>{{ team.constructor }}</td>
+            <td>{{ team.engine_supplier }}</td>
+            <td>{{ team.chassis }}</td>
+            <td>{{ team.engine_model }}</td>
+            <td>{{ team.nationality }}</td>
+        </tr>
+    {% endfor %}
+</table>
+
+
+
+{% endblock %}

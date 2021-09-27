@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Grand Prix</h1>
+<table>
+    <tr>
+        <th>Round</th>
+        <th>Name</th>
+        <th>Circuit</th>
+        <th>Date</th>
+    </tr>
+    {% for grand_prix in grand_prix %}
+        <tr>
+            <td>{{ grand_prix.round }}</td>
+            <td>{{ grand_prix.name }}</td>
+            <td>{{ grand_prix.circuit }}</td>
+            <td>{{ grand_prix.date }}</td>
+        </tr>
+    {% endfor %}
+</table>
+
+
+
+{% endblock %}

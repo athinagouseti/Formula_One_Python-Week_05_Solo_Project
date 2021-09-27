@@ -26,7 +26,7 @@ def select_all():
 
     for row in results:
         team = Team(row['id'], row['constructor'], row['engine_supplier'], row['chassis'], row['engine_model'], row['nationality'] )
-        teams.append(teams)
+        teams.append(team)
     return teams
 
 def delete(team):
