@@ -34,6 +34,7 @@ CREATE TABLE race_results (
     fastest_lap BOOLEAN,
     status VARCHAR,
     sprint_position INT
+    PRIMARY KEY (racing_number, grand_prix_round)
 );
 
 INSERT INTO teams(id, constructor, engine_supplier, chassis, engine_model, nationality) VALUES (1, 'Alfa Romeo', 'Ferrari', 'C41', '065/6', 'Switzerland');

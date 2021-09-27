@@ -39,13 +39,13 @@ def select_all():
         race_results.append(race_result)
     return race_results
 
-def delete(race_result):
-    sql = "DELETE  FROM race_results WHERE grand_prix_round = %s"
-    values = [race_result]
+def delete(racing_number, round):
+    sql = "DELETE FROM race_results WHERE racing_number = %s AND grand_prix_round = %s"
+    values = [racing_number, round]
     run_sql(sql, values)
 
 
 def update(race_result):
-    sql = "UPDATE race_results SET (racing_number, grand_prix_round, position, fastest_lap, status, sprint_position) = (%s, %s, %s, %s, %s, %s) WHERE grand_prix_round = %s"
+    sql = "UPDATE race_results SET (racing_number, grand_prix_round, position, fastest_lap, status, sprint_position) = (%s, %s, %s, %s, %s, %s) WHERE racing_number = %s AND grand_prix_round = %s"
     values = [race_result.racing_number, race_result.grand_prix_round, race_result.position, race_result.fastest_lap, race_result.status, race_result.sprint_position]
     run_sql(sql, values)

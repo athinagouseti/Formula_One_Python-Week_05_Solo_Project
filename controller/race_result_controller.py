@@ -36,6 +36,10 @@ def add_race_result():
     race_result_repository.save(race_result)
     return redirect('/race_results')
 
+@race_result_blueprint.route("/race_results/<racing_number>/<round>/delete", methods = ["POST"])
+def delete_race_result(racing_number, round):
+    race_result_repository.delete(racing_number, round)
+    return redirect('/race_results')
     
 
 
