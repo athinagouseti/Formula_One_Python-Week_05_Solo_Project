@@ -30,3 +30,17 @@ def add_grand_prix():
 def edit_grand_prix(round):
     grand_prix = grand_prix_repository.select(round)
     return render_template("grand_prix/edit.html", grand_prix = grand_prix)
+
+@grand_prix_blueprint.route("/grand_prix/<round>", methods = ['POST'])
+def update_grand_prix(round):
+    name = request.form["name"]
+    circuit = request.form["circuit"]
+    date = request.form["date"]
+    grand_prix = Grand_prix(round, name, circuit, date)
+    grand_prix_repository.update(grand_prix)
+    return redirect("/grand_prix")
+
+@grand_prix_blueprint.route("/grand_prix/<round>/delete", methods = ["POST"])
+def delete_grand_prix(round):
+    grand_prix_repository.delete(round)
+    return redirect('/grand_prix')

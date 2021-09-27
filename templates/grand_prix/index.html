@@ -9,6 +9,8 @@
         <th>Name</th>
         <th>Circuit</th>
         <th>Date</th>
+        <th></th>
+        <th></th>
     </tr>
     {% for grand_prix in grand_prix %}
         <tr>
@@ -16,11 +18,19 @@
             <td>{{ grand_prix.name }}</td>
             <td>{{ grand_prix.circuit }}</td>
             <td>{{ grand_prix.date }}</td>
+            <td><button type = "submit"><a href="/grand_prix/{{ grand_prix.round }}/edit">Edit Grand Prix</a></button></td> 
+            <td>
+                <div class="buttons">
+                    <form class = "delete-form" action = "/grand_prix/{{grand_prix.round}}/delete" method = "POST">
+                        <button class = "trash-button"><i class = "fa fa-trash-o fa-3x"></i>Delete Grand Prix</button>
+                    </form>
+                </div>
+            </td>
         </tr>
     {% endfor %}
 </table>
 
 <button type = "submit"><a href = "/grand_prix/new">Add Grand Prix</a></button> 
-<button type = "submit"><a href="/grand_prix/{{ grand_prix.round }}/edit">Edit Grand Prix</a></button>
+
 
 {% endblock %}

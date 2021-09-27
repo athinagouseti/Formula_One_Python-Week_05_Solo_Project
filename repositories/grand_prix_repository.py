@@ -35,6 +35,6 @@ def delete(round):
 
 
 def update(grand_prix):
-    sql = "UPDATE grand_prix SET (round, name, circuit, date) = (%s, %s, %s, %s) WHERE round = %s"
-    values = [grand_prix.round, grand_prix.name, grand_prix.circuit, grand_prix.date]
+    sql = "UPDATE grand_prix SET (name, circuit, date) = (%s, %s, %s) WHERE round = %s"
+    values = [grand_prix.name, grand_prix.circuit, grand_prix.date, grand_prix.round]
     run_sql(sql, values)

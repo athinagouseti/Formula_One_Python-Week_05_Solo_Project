@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<form action = "/grand_prix/{{grand_prix.round}}" method="post">
+    <div>
+        <label for = "name">Grand Prix Name</label>
+        <input type = "text" id = "name" name = "name" value = "{{ grand_prix.name }}" required>
+    </div>
+
+    <div>
+        <label for = "circuit">Grand Prix Circuit</label>
+        <input type = "text" id = "circuit" name = "circuit" value = "{{ grand_prix.circuit }}" required>
+    </div>
+    <div>
+        <label for = "date">Date</label>
+        <input type = "text" id = "date" name = "date" value = "{{ grand_prix.date }}" required>
+    </div>
+
+    <!-- <div>
+        <label for = "user">User</label>
+        <select id = "user" name = "user_id">
+            {% for user in all_users %}
+                <option value = "{{ user.id }}" {% if task.user.id == user.id %} selected = "selected" {% endif %}>{{ user.first_name }}</option>
+            {% endfor %}
+
+        </select>
+    </div> -->
+
+    <button type = "submit">Update Grand Prix</button>
+
+</form>
+
+
+{% endblock %}
