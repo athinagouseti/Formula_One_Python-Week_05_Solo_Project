@@ -3,7 +3,7 @@ from models.driver import Driver
 from models.team import Team
 
 def save(team):
-    sql = "INSERT INTO teams (id, constructor, engine_supplier, chassis, engine_model, nationality) VALUES (%s, %s, %s, %s. %s, %s)"
+    sql = "INSERT INTO teams (id, constructor, engine_supplier, chassis, engine_model, nationality) VALUES (%s, %s, %s, %s, %s, %s)"
     values = [team.id, team.constructor, team.engine_supplier, team.chassis, team.engine_model, team.nationality]
     results = run_sql(sql, values)
     return team 
@@ -29,9 +29,9 @@ def select_all():
         teams.append(team)
     return teams
 
-def delete(team):
+def delete(id):
     sql = "DELETE  FROM teams WHERE id = %s"
-    values = [team]
+    values = [id]
     run_sql(sql, values)
 
 

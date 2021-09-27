@@ -26,3 +26,7 @@ def add_grand_prix():
     grand_prix_repository.save(grand_prix)
     return redirect('/grand_prix')
 
+@grand_prix_blueprint.route("/grand_prix/<round>/edit", methods = ['GET'])
+def edit_grand_prix(round):
+    grand_prix = grand_prix_repository.select(round)
+    return render_template("grand_prix/edit.html", grand_prix = grand_prix)

@@ -25,4 +25,4 @@ def add_team():
     nationality = request.form['nationality']
     team = Team(id, constructor, engine_supplier, chassis, engine_model, nationality)
     team_repository.save(team)
-    return redirect("/teams/new")
+    return redirect("/teams")

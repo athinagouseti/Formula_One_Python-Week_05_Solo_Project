@@ -26,4 +26,4 @@ def add_driver():
     team = team_repository.select(team_id)
     driver = Driver(racing_number, name, nationality, team)
     driver_repository.save(driver)
-    return redirect('/drivers/new')
+    return redirect('/drivers')

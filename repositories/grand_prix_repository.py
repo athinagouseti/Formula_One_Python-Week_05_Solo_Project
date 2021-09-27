@@ -18,7 +18,7 @@ def select_all():
         grands_prix.append(grand_prix)
     return grands_prix
 
-def select(id):
+def select(round):
     grand_prix = None
     sql = "SELECT * FROM grand_prix WHERE round = %s"
     values = [round]
@@ -28,7 +28,7 @@ def select(id):
         grand_prix = Grand_prix(result['round'], result['name'], result['circuit'], result['date'])
     return grand_prix
 
-def delete(grand_prix):
+def delete(round):
     sql = "DELETE  FROM grand_prix WHERE round = %s"
     values = [round]
     run_sql(sql, values)
