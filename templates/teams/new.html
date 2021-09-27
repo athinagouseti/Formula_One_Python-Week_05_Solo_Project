@@ -2,26 +2,36 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>Add a Driver</h1>
+<h1>Add a team</h1>
 
 
-<form action = "/drivers" method="post">
+<form action = "/teams" method="post">
     <div>
-        <label for = "driver">Driver's Racing Number</label>
-        <input type = "INT">
+        <label for = "id">Team ID</label>
+        <input type = "INT" name = "id">
     </div>
     <div>
-        <label for = "name">Name</label>
-        <input type = "text">
+        <label for = "constructor">Constructor</label>
+        <input type = "text" name = "constructor">
+    </div>
+    <div>
+        <label for = "engine_supplier">Engine Supplier</label>
+        <input type = "text" name = "engine_supplier">
+    </div>
+    <div>
+        <label for = "chassis">Chassis</label>
+        <input type = "text" name = "chassis">
+    </div>
+    <div>
+        <label for = "engine_model">Engine Model</label>
+        <input type = "text" name = "engine_model">
     </div>
     <div>
         <label for = "nationality">Nationality</label>
-        <input type = "text">
+        <input type = "text" name = "nationality">
     </div>
-    <div>
-        <label for = "team">Team ID</label>
-        <input type = "INT">
-    </div>
+
+
     <button type = "submit">Add Team</button>
 
   
