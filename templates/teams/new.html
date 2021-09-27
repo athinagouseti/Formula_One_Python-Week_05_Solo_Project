@@ -1,0 +1,28 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Add a Driver</h1>
+
+
+<form action = "/drivers" method="post">
+    <div>
+        <label for = "driver">Driver's Racing Number</label>
+        <input type = "INT">
+    </div>
+    <div>
+        <label for = "name">Name</label>
+        <input type = "text">
+    </div>
+    <div>
+        <label for = "nationality">Nationality</label>
+        <input type = "text">
+    </div>
+    <div>
+        <label for = "team">Team ID</label>
+        <input type = "INT">
+    </div>
+    <button type = "submit">Add Team</button>
+
+  
+{% endblock %}
