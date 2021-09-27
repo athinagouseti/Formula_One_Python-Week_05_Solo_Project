@@ -28,3 +28,14 @@ def select_all():
         team = Team(row['id'], row['constructor'], row['engine_supplier'], row['chassis'], row['engine_model'], row['nationality'] )
         teams.append(teams)
     return teams
+
+def delete(team):
+    sql = "DELETE  FROM teams WHERE id = %s"
+    values = [team]
+    run_sql(sql, values)
+
+
+def update(team):
+    sql = "UPDATE teams SET (id, constructor, engine_supplier, chassis, engine_model, nationality) = (%s, %s, %s, %s, %s, %s) WHERE id = %s"
+    values = [team.id, team.constructor, team.engine_supplier, team.chassis, team.engine_model, team.nationality]
+    run_sql(sql, values)
