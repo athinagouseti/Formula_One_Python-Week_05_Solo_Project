@@ -4,8 +4,11 @@ from models.team import Team
 class TestTeam(unittest.TestCase):
 
     def setUp(self):
-        self.team = Team("Red Bull", "Honda", "RB16B", "RA621H", "Austria")
+        self.team = Team(9, "Red Bull", "Honda", "RB16B", "RA621H", "Austria")
     
+    def test_team_has_id(self):
+        self.assertEqual(9, self.team.id)
+
     def test_team_has_constructor(self):
         self.assertEqual("Red Bull", self.team.constructor)
 
