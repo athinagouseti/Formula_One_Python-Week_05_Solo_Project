@@ -16,8 +16,8 @@ class TestRaceResult(unittest.TestCase):
     def test_race_result_has_driver(self):
         self.assertEqual(self.race_result.driver, self.driver)
 
-    def test_race_result_has_grand_prix_round(self):
-        self.assertEqual(self.race_result.grand_prix_round, self.grand_prix)
+    def test_race_result_has_grand_prix(self):
+        self.assertEqual(self.race_result.grand_prix, self.grand_prix)
 
     def test_race_result_has_position(self):
         self.assertEqual(1, self.race_result.position)

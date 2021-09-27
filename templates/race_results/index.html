@@ -5,8 +5,10 @@
 <h1>Race Result</h1>
 <table>
     <tr>
-        <th>Racing Number</th>
         <th>Grand Prix Round</th>
+        <th>Grand Prix Name</th>
+        <th>Racing Number</th>
+        <th>Driver Name</th>
         <th>Position</th>
         <th>Fastest Lap</th>
         <th>Status</th>
@@ -14,8 +16,10 @@
     </tr>
     {% for race_result in race_results %}
         <tr>
-            <td>{{ race_result.racing_number }}</td>
-            <td>{{ race_result.grand_prix_round }}</td>
+            <td>{{ race_result.grand_prix.round }}</td>
+            <td>{{ race_result.grand_prix.name }}</td>
+            <td>{{ race_result.driver.racing_number }}</td>
+            <td>{{ race_result.driver.name }}</td>
             <td>{{ race_result.position }}</td>
             <td>{{ race_result.fastest_lap }}</td>
             <td>{{ race_result.status }}</td>
@@ -24,6 +28,6 @@
     {% endfor %}
 </table>
 
-<button type = "submit"><a href = "/race_result/new">Add Race Result</a></button> 
+<button type = "submit"><a href = "/race_results/new">Add Race Result</a></button> 
 
 {% endblock %}

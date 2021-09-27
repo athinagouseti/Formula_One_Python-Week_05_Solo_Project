@@ -1,0 +1,47 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Add a Race Result</h1>
+
+
+<form action = "/race_results" method="post">
+    <div>
+        <label for = "driver_racing_number">Driver"s Racing Number</label>
+        <input type = "INT" id = "racing_number" name = "racing_number">
+    </div>
+    <div>
+        <label for = "grand_prix_round">Grand Prix Round</label>
+        <input type = "text" id = "grand_prix_round" name = "grand_prix_round">
+    </div>
+    <div>
+        <label for = "position">Position</label>
+        <select id = "position" name = "position" placeholder = "NULL">
+            <option min = "0" max = "20">{{ race_result.position }}</option>
+        </select>
+        <!-- <input type = "text" id = "position" name = "position"> -->
+    </div>
+    <div>
+        <label for = "status">Status</label>
+        <input type = "text" id = "status" name = "status">
+    </div>
+    <div>
+        <label for = "sprint_position">Sprint Position</label>
+        <input type = "text" id = "sprint_position" name = "sprint_position">
+    </div>
+    <div>
+        <label for = "fastest_lap">Fastest Lap</label>
+        <input type = "BOOLEAN" id = "fastest_lap" name = "fastest_lap">
+    </div>
+    <!-- <div>
+        <label for = "team">Team ID</label>
+        <select id = "team_id" name = "team_id" placeholder = "Team" >
+        {% for team in teams %}
+        <option value = "{{ team.id }}">{{ team.id }} , {{ team.constructor }}, {{ team.engine_supplier }}, {{ team.nationality }}</option>
+        {% endfor %}
+        </select>
+
+    </div> -->
+    <button type = "submit">Add Race Result</button>
+
+{% endblock %}
