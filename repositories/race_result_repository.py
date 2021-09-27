@@ -40,7 +40,7 @@ def save(race_result):
 def select_all():
     race_results = []
 
-    sql = "SELECT * FROM race_results"
+    sql = "SELECT * FROM race_result"
     results = run_sql(sql)
 
     for row in results:
@@ -49,7 +49,7 @@ def select_all():
     return race_results
 
 def delete(race_result):
-    sql = "DELETE  FROM race_results WHERE grand_prix_round = %s"
+    sql = "DELETE  FROM race_result WHERE grand_prix_round = %s"
     values = [race_result]
     run_sql(sql, values)
 

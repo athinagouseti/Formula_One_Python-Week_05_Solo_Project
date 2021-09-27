@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Race Result</h1>
+<table>
+    <tr>
+        <th>Racing Number</th>
+        <th>Grand Prix Round</th>
+        <th>Position</th>
+        <th>Fastest Lap</th>
+        <th>Status</th>
+        <th>Sprint Position</th>
+    </tr>
+    {% for race_result in race_results %}
+        <tr>
+            <td>{{ race_result.racing_number }}</td>
+            <td>{{ race_result.grand_prix_round }}</td>
+            <td>{{ race_result.position }}</td>
+            <td>{{ race_result.fastest_lap }}</td>
+            <td>{{ race_result.status }}</td>
+            <rd>{{ race_result.sprint_position }}</rd>
+        </tr>
+    {% endfor %}
+</table>
+
+
+
+{% endblock %}
