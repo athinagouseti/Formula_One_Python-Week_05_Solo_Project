@@ -7,41 +7,52 @@
 
 <form action = "/race_results" method="post">
     <div>
-        <label for = "driver_racing_number">Driver"s Racing Number</label>
-        <input type = "INT" id = "racing_number" name = "racing_number">
+        <label for = "driver">Driver</label>
+        <select id = "driver" name = "driver" placeholder = "Driver" >
+        {% for driver in drivers %}
+        <option value = "{{ driver.racing_number}}">{{ driver.name }}</option>
+        {% endfor %}
+        </select>
     </div>
     <div>
-        <label for = "grand_prix_round">Grand Prix Round</label>
-        <input type = "text" id = "grand_prix_round" name = "grand_prix_round">
+        <label for = "grand_prix">Grand Prix</label>
+        <select id = "grand_prix" name = "grand_prix" placeholder = "Grand Prix" >
+        {% for grand_prix in grands_prix %}
+        <option value = "{{ grand_prix.round }}">{{ grand_prix.name }}</option>
+        {% endfor %}
+        </select>
     </div>
     <div>
         <label for = "position">Position</label>
-        <select id = "position" name = "position" placeholder = "NULL">
-            <option min = "0" max = "20">{{ race_result.position }}</option>
+        <select id = "position" name = "position" placeholder = "Position" >
+            {% for number in range(1, 21) %}
+            <option value = "{{ number }}">{{ number }}</option>
+            {% endfor %}
         </select>
-        <!-- <input type = "text" id = "position" name = "position"> -->
-    </div>
-    <div>
-        <label for = "status">Status</label>
-        <input type = "text" id = "status" name = "status">
-    </div>
-    <div>
-        <label for = "sprint_position">Sprint Position</label>
-        <input type = "text" id = "sprint_position" name = "sprint_position">
     </div>
     <div>
         <label for = "fastest_lap">Fastest Lap</label>
-        <input type = "BOOLEAN" id = "fastest_lap" name = "fastest_lap">
+        <input type = "checkbox" id = "fastest_lap" name = "fastest_lap">
     </div>
-    <!-- <div>
-        <label for = "team">Team ID</label>
-        <select id = "team_id" name = "team_id" placeholder = "Team" >
-        {% for team in teams %}
-        <option value = "{{ team.id }}">{{ team.id }} , {{ team.constructor }}, {{ team.engine_supplier }}, {{ team.nationality }}</option>
-        {% endfor %}
+    <div>
+        <label for = "status">Status</label>
+        <select id = "status" name = "status">
+            <option value = ""></option>
+            <option value = "DNS">DNS</option>
+            <option value = "Ret">Ret</option>
+            <option value = "DSQ">DSQ</option>
+            <option value = "WD">WD</option>
         </select>
-
-    </div> -->
+    </div>
+    <div>
+        <label for = "sprint_position">Sprint Position</label>
+        <select id = "sprint_position" name = "sprint_position">
+            <option value = ""></option>
+            {% for number in range(1, 4) %}
+            <option value = "{{ number }}">{{ number }}</option>
+            {% endfor %}
+        </select>
+    </div>
     <button type = "submit">Add Race Result</button>
-
+</form>
 {% endblock %}

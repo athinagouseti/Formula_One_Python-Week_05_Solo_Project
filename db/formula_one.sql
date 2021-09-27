@@ -286,9 +286,9 @@ INSERT INTO race_results (racing_number, grand_prix_round, position, fastest_lap
 INSERT INTO race_results (racing_number, grand_prix_round, position, fastest_lap, status, sprint_position) VALUES (9, 9, 19, FALSE, NULL, NULL);
 
 -- GBR GP
-INSERT INTO race_results (racing_number, grand_prix_round, position, fastest_lap, status, sprint_position) VALUES (44, 10, 1, FALSE, NULL, NULL);
-INSERT INTO race_results (racing_number, grand_prix_round, position, fastest_lap, status, sprint_position) VALUES (33, 10, NULL, FALSE, 'Ret', NULL);
-INSERT INTO race_results (racing_number, grand_prix_round, position, fastest_lap, status, sprint_position) VALUES (77, 10, 3, FALSE, NULL, NULL);
+INSERT INTO race_results (racing_number, grand_prix_round, position, fastest_lap, status, sprint_position) VALUES (44, 10, 1, FALSE, NULL, 2);
+INSERT INTO race_results (racing_number, grand_prix_round, position, fastest_lap, status, sprint_position) VALUES (33, 10, NULL, FALSE, 'Ret', 1);
+INSERT INTO race_results (racing_number, grand_prix_round, position, fastest_lap, status, sprint_position) VALUES (77, 10, 3, FALSE, NULL, 3);
 INSERT INTO race_results (racing_number, grand_prix_round, position, fastest_lap, status, sprint_position) VALUES (4, 10, 4, FALSE, NULL, NULL);
 INSERT INTO race_results (racing_number, grand_prix_round, position, fastest_lap, status, sprint_position) VALUES (11, 10, 16, TRUE, NULL, NULL);
 INSERT INTO race_results (racing_number, grand_prix_round, position, fastest_lap, status, sprint_position) VALUES (55, 10, 6, FALSE, NULL, NULL);

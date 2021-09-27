@@ -8,22 +8,10 @@ import repositories.team_repository as team_repository
 import repositories.driver_repository as driver_repository
 import repositories.grand_prix_repository as grand_prix_repository
 
-# def driver(grand_prix):
-#     drivers = []
-#     sql = "SELECT  racing_number.* FROM drivers INNER JOIN grand_prix ON grand_prix.racing_number = racing_number WHERE grand_prix.racing_number = %s"
-#     values = [grand_prix.racing_number]
-#     results = run_sql(sql, values)
-    
-#     for row in results:
-#         team = team_repository.select(row['team_id'])
-#         driver = Driver(row['racing_number'], row['name'], row['nationality', team])
-#         drivers.append(driver)
-#     return drivers
 
 def save(race_result):
     sql = "INSERT INTO race_results (racing_number, grand_prix_round, position, fastest_lap, status, sprint_position) VALUES (%s, %s, %s, %s, %s, %s)"
-    # "SELECT  users.* FROM users INNER JOIN visits ON visits.user_id = users.id WHERE location_id = %s"
-    values = [race_result.racing_number, race_result.grand_prix_round, race_result.position, race_result.fastest_lap, race_result.status, race_result.sprint_position]
+    values = [race_result.driver.racing_number, race_result.grand_prix.round, race_result.position, race_result.fastest_lap, race_result.status, race_result.sprint_position]
     results = run_sql(sql, values)
     return race_result
 

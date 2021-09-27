@@ -1,6 +1,7 @@
 from db.run_sql import run_sql
 from models.driver import Driver
 from models.team import Team
+from models.grand_prix import Grand_prix
 import pdb
 
 import repositories.team_repository as team_repository
@@ -9,6 +10,18 @@ def save(driver):
     sql = "INSERT INTO drivers (racing_number, name, nationality, team_id) VALUES (%s, %s, %s, %s)"
     values = [driver.racing_number, driver.name, driver.nationality, driver.team.id]
     results = run_sql(sql, values)
+    return driver
+
+def select(racing_number):
+    driver = None
+    sql = "SELECT * FROM drivers WHERE racing_number = %s"
+    values = [racing_number]
+
+    result = run_sql(sql, values)[0]
+
+    if result is not None:
+        team = team_repository.select(result['team_id'])
+        driver = Driver(result['racing_number'], result['name'], result['nationality'], team)
     return driver
 
 def select_all():
