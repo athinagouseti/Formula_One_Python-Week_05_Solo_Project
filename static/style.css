@@ -1,5 +1,19 @@
-#navbar {
+body {
+    background-color: #F6F4F1;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+#header {
     background-color: #e10600;
+}
+
+#navbar {
     overflow: hidden;
     text-align: center;
 }
@@ -12,13 +26,51 @@
 
 #navbar > ul {
     list-style: none;
+    display: flex;
+    flex-direction: row;
+    margin: 0;
 }
 
 #navbar > ul > li > a:visited {
     color: white;
 }
 
+#navbar > ul >li {
+    margin: 0 20px;
+    padding: 26px 10px;
+}
+
 #navbar > ul > li:hover {
-    padding: 10px;
     background-color: black;
+}
+
+#content {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    max-width: 1440px;
+    margin: 20px;
+    background-color: #FFFFFF;
+    padding: 26px;
+}
+
+table {
+    border: none;
+    border-spacing: 0;
+}
+
+th {
+    color: gray;
+    text-transform: uppercase;
+    font-size: 11px;
+}
+
+td {
+    padding: 20px;
+    font-size: 13px;
+    border: none;
+}
+
+tr:nth-child(even) {
+    background-color: #F4F4F4;
 }

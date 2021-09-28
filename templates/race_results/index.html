@@ -26,11 +26,11 @@
             <td>{{ race_result.fastest_lap }}</td>
             <td>{{ race_result.status }}</td>
             <td>{{ race_result.sprint_position }}</td>
-            <td><button type = "submit"><a href="/race_results/{{ race_result.driver.racing_number }}/{{ race_result.grand_prix.round }}/edit">Edit Race Result</a></button></td> 
+            <td><button class = "button" type = "submit"><a href="/race_results/{{ race_result.driver.racing_number }}/{{ race_result.grand_prix.round }}/edit">Edit Race Result</a></button></td> 
             <td>
                 <div class="buttons">
                     <form class = "delete-form" action = "/race_results/{{ race_result.driver.racing_number }}/{{ race_result.grand_prix.round }}/delete" method = "POST">
-                        <button class = "trash-button"><i class = "fa fa-trash-o fa-3x"></i>Delete Race Result</button>
+                        <button class = "button">Delete Race Result</button>
                     </form>
                 </div>
             </td>
@@ -38,7 +38,7 @@
     {% endfor %}
 </table>
 
-<button type = "submit"><a href = "/race_results/new">Add Race Result</a></button> 
-<button type = "submit"><a href = "/race_results/championship">Championship</a></button> 
+<button class = "button" type = "submit"><a href = "/race_results/new">Add Race Result</a></button> 
+
 
 {% endblock %}

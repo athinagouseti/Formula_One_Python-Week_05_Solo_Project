@@ -7,29 +7,35 @@
     <title>Formula One</title>
 </head>    
 <body>
-    <nav id = "navbar">
-        <ul>
-            <li>
-                <a href = "/drivers">Drivers</a>
-            </li>
-            <li>
-                <a href = "/teams">Teams</a>
-            </li>
-            <li>
-                <a href = "/race_results">Race Result</a>
-            </li>
-            <li>
-                <a href = "/grand_prix">Grand Prix</a>
-            </li>
-            <li>
-                <a href = "/championship">Championship</a>
-            </li>
-        </ul>
-    </nav>
-    <section id = "content">
-        {% block content %}
+    <div id="header">
+        <div class="container">
+            <nav id = "navbar">
+                <ul>
+                    <li>
+                        <a href = "/drivers">Drivers</a>
+                    </li>
+                    <li>
+                        <a href = "/teams">Teams</a>
+                    </li>
+                    <li>
+                        <a href = "/race_results">Race Result</a>
+                    </li>
+                    <li>
+                        <a href = "/grand_prix">Grand Prix</a>
+                    </li>
+                    <li>
+                        <a href = "/championship">Championship</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <div class="container">
+        <section id = "content">
+            {% block content %}
 
-        {% endblock %}
-    </section>
+            {% endblock %}
+        </section>
+    </div>
 </body>
 </html>

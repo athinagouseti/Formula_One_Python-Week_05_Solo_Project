@@ -18,11 +18,11 @@
             <td>{{ driver.name }}</td>
             <td>{{ driver.nationality }}</td>
             <td>{{ driver.team.constructor }}</td>
-            <td><button type = "submit"><a href="/drivers/{{ driver.racing_number}}/edit">Edit Driver</a></button></td> 
+            <td><button class = "button" type = "submit"><a href="/drivers/{{ driver.racing_number}}/edit">Edit Driver</a></button></td> 
             <td>
-                <div class="buttons">
+                <div >
                     <form class = "delete-form" action = "/drivers/{{ driver.racing_number }}/delete" method = "POST">
-                        <button class = "trash-button"><i class = "fa fa-trash-o fa-3x"></i>Delete Driver</button>
+                        <button class = "button">Delete Driver</button>
                     </form>
                 </div>
             </td>
@@ -30,7 +30,7 @@
     {% endfor %}
 </table>
 
-<button type = "submit"><a href = "/drivers/new">Add Driver</a></button> 
+<button class = "button" type = "submit"><a href = "/drivers/new">Add Driver</a></button> 
 
 
 

@@ -3,10 +3,6 @@
 {% block content %}
 
 <form action = "/teams/{{ team.id }}" method="post">
-    <!-- <div>
-        <label for = "id">Grand Prix ID</label>
-        <input type = "INT" id = "id" name = "id" value = "{{ team.id }}" required>
-    </div> -->
 
     <div>
         <label for = "constructor">Grand Prix Constructor</label>
@@ -29,7 +25,7 @@
         <input type = "text" id = "nationality" name = "nationality" value = "{{ team.nationality }}" required>
     </div>
 
-    <button type = "submit">Update Team</button>
+    <button class = "button" type = "submit">Update Team</button>
 
 </form>
 

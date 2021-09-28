@@ -9,7 +9,7 @@
         <th>Driver Name</th>
         <th>Team Name</th>
         {% for grand_prix in grands_prix %}
-        <th>{{ grand_prix.name[0:3].upper() }}</th>
+        <th>{{ grand_prix }}</th>
         {% endfor %}
     </tr>
     {% for standing in standings %}
