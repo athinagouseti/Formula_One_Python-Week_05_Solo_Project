@@ -18,11 +18,15 @@
             <td>{{ grand_prix.name }}</td>
             <td>{{ grand_prix.circuit }}</td>
             <td>{{ grand_prix.date }}</td>
-            <td><button class = "button" type = "submit"><a href="/grand_prix/{{ grand_prix.round }}/edit">Edit Grand Prix</a></button></td> 
+            <td>
+                <form action="grand_prix/{{ grand_prix.round }}/edit" method="get">
+                    <button class = "button black" type = "submit">Edit Grand Prix</button>
+                </form>
+            </td> 
             <td>
                 <div class="buttons">
                     <form class = "delete-form" action = "/grand_prix/{{grand_prix.round}}/delete" method = "POST">
-                        <button class = "button">Delete Grand Prix</button>
+                        <button class = "button red">Delete Grand Prix</button>
                     </form>
                 </div>
             </td>
@@ -30,7 +34,10 @@
     {% endfor %}
 </table>
 
-<button class = "button" type = "submit"><a href = "/grand_prix/new">Add Grand Prix</a></button> 
+<form action = "/grand_prix/new" method="get">
+    <button class = "button red" type = "submit">Add Grand Prix</button> 
+</form>
+
 
 
 {% endblock %}

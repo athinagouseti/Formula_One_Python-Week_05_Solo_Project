@@ -1,7 +1,7 @@
 body {
     background-color: #F6F4F1;
     margin: 0;
-    font-family: sans-serif;
+    font-family: 'Titillium Web', sans-serif;
 }
 
 .container {
@@ -73,4 +73,21 @@ td {
 
 tr:nth-child(even) {
     background-color: #F4F4F4;
+}
+
+.button {
+    outline: none;
+    border: none;
+    color: #FFFFFF;
+    padding: 8px;
+    border-radius: 5px;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+.red {
+    background-color: #e10600;
+}
+
+.black {
+    background-color: #000000
 }
