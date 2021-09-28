@@ -54,11 +54,20 @@ def update(race_result):
 
 
 def select_all_championship():
-    grands_prix = grand_prix_repository.select_all()
+    grands_prix = select_all_grand_prix_with_results()
     grands_prix_names = ""
     for grand_prix in grands_prix:
-        grands_prix_names += f", {grand_prix.name[0:3]} INT"
+        grands_prix_names += f", {grand_prix} INT"
 
     sql = f"SELECT * FROM crosstab ('SELECT drivers.racing_number, name, teams.constructor, grand_prix_round, position FROM race_results INNER JOIN drivers on race_results.racing_number = drivers.racing_number INNER JOIN teams ON teams.id = drivers.team_id ORDER BY 2, 3', 'SELECT DISTINCT grand_prix_round FROM race_results ORDER BY 1') AS ct(racing_number INT, drivers_name VARCHAR, team_name VARCHAR{grands_prix_names})"
     results = run_sql(sql)
     return results
+
+def select_all_grand_prix_with_results():
+    sql = "SELECT DISTINCT race_results.grand_prix_round, name FROM race_results INNER JOIN grand_prix ON race_results.grand_prix_round = grand_prix.round ORDER BY 1"
+    results = run_sql(sql)
+    gp_abbreviations = []
+
+    for result in results:
+        gp_abbreviations.append(result["name"][0:3].upper())
+    return gp_abbreviations
