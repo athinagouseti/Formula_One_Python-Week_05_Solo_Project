@@ -37,6 +37,8 @@ CREATE TABLE race_results (
     PRIMARY KEY (racing_number, grand_prix_round)
 );
 
+
+
 INSERT INTO teams(id, constructor, engine_supplier, chassis, engine_model, nationality) VALUES (1, 'Alfa Romeo', 'Ferrari', 'C41', '065/6', 'Switzerland');
 INSERT INTO teams(id, constructor, engine_supplier, chassis, engine_model, nationality) VALUES (2, 'AlphaTauri', 'Honda', 'AT02', 'RA621H', 'Italy');
 INSERT INTO teams(id, constructor, engine_supplier, chassis, engine_model, nationality) VALUES (3, 'Alpine', 'Renault', 'A521', 'E-Tech 20B', 'France');
@@ -383,7 +385,7 @@ INSERT INTO race_results (racing_number, grand_prix_round, position, fastest_lap
 INSERT INTO race_results (racing_number, grand_prix_round, position, fastest_lap, status, sprint_position) VALUES (11, 14, 5, FALSE, NULL, NULL);
 INSERT INTO race_results (racing_number, grand_prix_round, position, fastest_lap, status, sprint_position) VALUES (55, 14, 6, FALSE, NULL, NULL);
 INSERT INTO race_results (racing_number, grand_prix_round, position, fastest_lap, status, sprint_position) VALUES (16, 14, 4, FALSE, NULL, NULL);
-INSERT INTO race_results (racing_number, grand_prix_round, position, fastest_lap, status, sprint_position) VALUES (3, 14, 1, TRUE, NULL, 1);
+INSERT INTO race_results (racing_number, grand_prix_round, position, fastest_lap, status, sprint_position) VALUES (3, 14, 1, TRUE, NULL, 3);
 INSERT INTO race_results (racing_number, grand_prix_round, position, fastest_lap, status, sprint_position) VALUES (10, 14, NULL, FALSE, 'Ret', NULL);
 INSERT INTO race_results (racing_number, grand_prix_round, position, fastest_lap, status, sprint_position) VALUES (14, 14, 8, FALSE, NULL, NULL);
 INSERT INTO race_results (racing_number, grand_prix_round, position, fastest_lap, status, sprint_position) VALUES (31, 14, 10, FALSE, NULL, NULL);

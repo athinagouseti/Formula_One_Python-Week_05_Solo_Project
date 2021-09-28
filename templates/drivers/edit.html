@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<form action = "/drivers/{{ driver.racing_number }}" method="post">
+    <div>
+        <label for = "racing_number">Driver Racing umber</label>
+        <input type = "text" id = "racing_number" name = "racing_number" value = "{{ driver.racing_number }}" required>
+    </div>
+
+    <div>
+        <label for = "driver_name">Driver Name</label>
+        <input type = "text" id = "driver_name" name = "driver_name" value = "{{ driver.name }}" required>
+    </div>
+    <div>
+        <label for = "driver_nationality">Date</label>
+        <input type = "text" id = "driver_nationality" name = "driver_nationality" value = "{{ driver.nationality }}" required>
+    </div>
+    <div>
+        <label for = "team">Team</label>
+        <select id = "team" name = "team" placeholder = "Team" >
+        {% for team in teams %}
+        <option value = "{{ team.id }}">{{ team.constructor }}</option>
+        {% endfor %}
+        </select>
+    </div>
+
+    <button type = "submit">Update Driver</button>
+
+</form>
+
+
+{% endblock %}

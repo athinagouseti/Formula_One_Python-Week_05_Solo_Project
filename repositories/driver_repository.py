@@ -43,6 +43,6 @@ def delete(racing_number):
 
 
 def update(driver):
-    sql = "UPDATE drivers SET (racing_number, name, nationality, team_id) = (%s, %s, %s, %s, %s, %s) WHERE racing_number = %s"
-    values = [driver.racing_number, driver.name, driver.nationality, driver.team.id]
+    sql = "UPDATE drivers SET (name, nationality, team_id) = (%s, %s, %s) WHERE racing_number = %s"
+    values = [driver.name, driver.nationality, driver.team.id, driver.racing_number]
     run_sql(sql, values)
