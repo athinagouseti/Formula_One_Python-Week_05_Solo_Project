@@ -1,0 +1,24 @@
+#navbar {
+    background-color: #e10600;
+    overflow: hidden;
+    text-align: center;
+}
+
+#navbar > ul > li > a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+#navbar > ul {
+    list-style: none;
+}
+
+#navbar > ul > li > a:visited {
+    color: white;
+}
+
+#navbar > ul > li:hover {
+    padding: 10px;
+    background-color: black;
+}
