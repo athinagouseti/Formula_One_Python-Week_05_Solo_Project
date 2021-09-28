@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Championship</h1>
+<table>
+    <tr>
+        <th>Racing Number</th>
+        <th>Driver Name</th>
+        <th>Team Name</th>
+        {% for grand_prix in grands_prix %}
+        <th>{{ grand_prix.name[0:3].upper() }}</th>
+        {% endfor %}
+    </tr>
+    {% for standing in standings %}
+    <tr>
+        {% for value in standing.values() %}
+        <td>{{ value }}</td>
+        {% endfor %}
+    </tr>
+    {% endfor %}
+</table>
+
+
+{% endblock %}
+
+

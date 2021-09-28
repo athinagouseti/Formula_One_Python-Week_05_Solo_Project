@@ -31,16 +31,11 @@ def add_race_result():
     fastest_lap = False
     if 'fastest_lap' in request.form:
         fastest_lap = True
-        
+
     status = request.form['status'] if request.form['status'] != "" else None
     sprint_position = request.form['sprint_position'] if request.form['sprint_position'] != "" else None
     race_result = Race_Result(driver, grand_prix, position, fastest_lap, status, sprint_position)
     race_result_repository.save(race_result)
-    return redirect('/race_results')
-
-@race_result_blueprint.route("/race_results/<racing_number>/<round>/delete", methods = ["POST"])
-def delete_race_result(racing_number, round):
-    race_result_repository.delete(racing_number, round)
     return redirect('/race_results')
     
 @race_result_blueprint.route("/race_results/<racing_number>/<round>/edit", methods = ['GET'])
@@ -68,5 +63,13 @@ def update_race_result(racing_number, round):
     race_result_repository.update(race_result)
     return redirect("/race_results")
 
+@race_result_blueprint.route("/race_results/<racing_number>/<round>/delete", methods = ["POST"])
+def delete_race_result(racing_number, round):
+    race_result_repository.delete(racing_number, round)
+    return redirect('/race_results')
 
-
+@race_result_blueprint.route("/race_results/championship")
+def show_race_results():
+    race_result_repository.championship()
+    return redirect("/race_results/championship")
+    

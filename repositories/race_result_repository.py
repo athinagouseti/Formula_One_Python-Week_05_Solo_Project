@@ -51,3 +51,14 @@ def update(race_result):
     sql = "UPDATE race_results SET (racing_number, grand_prix_round, position, fastest_lap, status, sprint_position) = (%s, %s, %s, %s, %s, %s) WHERE racing_number = %s AND grand_prix_round = %s"
     values = [race_result.driver.racing_number, race_result.grand_prix.round, race_result.position, race_result.fastest_lap, race_result.status, race_result.sprint_position, race_result.driver.racing_number, race_result.grand_prix.round]
     run_sql(sql, values)
+
+
+def select_all_championship():
+    grands_prix = grand_prix_repository.select_all()
+    grands_prix_names = ""
+    for grand_prix in grands_prix:
+        grands_prix_names += f", {grand_prix.name[0:3]} INT"
+
+    sql = f"SELECT * FROM crosstab ('SELECT drivers.racing_number, name, teams.constructor, grand_prix_round, position FROM race_results INNER JOIN drivers on race_results.racing_number = drivers.racing_number INNER JOIN teams ON teams.id = drivers.team_id ORDER BY 2, 3', 'SELECT DISTINCT grand_prix_round FROM race_results ORDER BY 1') AS ct(racing_number INT, drivers_name VARCHAR, team_name VARCHAR{grands_prix_names})"
+    results = run_sql(sql)
+    return results

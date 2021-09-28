@@ -2,7 +2,7 @@ from db.run_sql import run_sql
 from models.driver import Driver
 from models.team import Team
 from models.grand_prix import Grand_prix
-import pdb
+
 
 import repositories.team_repository as team_repository
 
