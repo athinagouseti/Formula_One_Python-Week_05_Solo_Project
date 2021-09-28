@@ -2,27 +2,29 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>Add a Grand Prix</h1>
+<div class="form_container">
+    <h1>Add a Grand Prix</h1>
 
 
-<form action = "/grand_prix" method="post">
-    <div>
-        <label for = "round">Grand Prix Round</label>
-        <input type = "INT" name = "round">
-    </div>
-    <div>
-        <label for = "name">Grand Prix Name</label>
-        <input type = "text" name = "name">
-    </div>
-    <div>
-        <label for = "circuit">Grand Prix Circuit</label>
-        <input type = "text" name = "circuit">
-    </div>
-    <div>
-        <label for = "date">Date</label>
-        <input type = "text" name = "date">
-    </div>
-    <button class = "button red" type = "submit">Add Grand prix</button>
+    <form action = "/grand_prix" method="post"class="input_form">
+        <div class="form_field">
+            <label for = "round">Grand Prix Round</label>
+            <input type = "INT" name = "round">
+        </div>
+        <div class="form_field">
+            <label for = "name">Grand Prix Name</label>
+            <input type = "text" name = "name">
+        </div>
+        <div class="form_field">
+            <label for = "circuit">Grand Prix Circuit</label>
+            <input type = "text" name = "circuit">
+        </div>
+        <div class="form_field">
+            <label for = "date">Date</label>
+            <input type = "text" name = "date">
+        </div>
+        <button class = "button red" type = "submit">Add Grand prix</button>
 
-  
+    </form>
+</div>
 {% endblock %}

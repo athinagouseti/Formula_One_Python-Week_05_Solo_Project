@@ -2,31 +2,33 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>Add a Driver</h1>
+<div class="form_container">
+    <h1>Add a Driver</h1>
 
 
-<form action = "/drivers" method="post">
-    <div>
-        <label for = "racing_number">Driver's Racing Number</label>
-        <input type = "INT" id = "racing_number" name = "racing_number">
-    </div>
-    <div>
-        <label for = "name">Name</label>
-        <input type = "text" id = "name" name = "name">
-    </div>
-    <div>
-        <label for = "nationality">Nationality</label>
-        <input type = "text" id = "nationality" name = "nationality">
-    </div>
-    <div>
-        <label for = "team">Team ID</label>
-        <select id = "team_id" name = "team_id" placeholder = "Team" >
-        {% for team in teams %}
-        <option value = "{{ team.id }}">{{ team.id }} , {{ team.constructor }}, {{ team.engine_supplier }}, {{ team.nationality }}</option>
-        {% endfor %}
-        </select>
+    <form action = "/drivers" method="post" class="input_form">
+        <div class="form_field">
+            <label for = "racing_number">Driver's Racing Number</label>
+            <input type = "INT" id = "racing_number" name = "racing_number">
+        </div>
+        <div class="form_field">
+            <label for = "name">Name</label>
+            <input type = "text" id = "name" name = "name">
+        </div>
+        <div class="form_field">
+            <label for = "nationality">Nationality</label>
+            <input type = "text" id = "nationality" name = "nationality">
+        </div>
+        <div class="form_field">
+            <label for = "team">Team ID</label>
+            <select id = "team_id" name = "team_id" placeholder = "Team" >
+            {% for team in teams %}
+            <option value = "{{ team.id }}">{{ team.id }} , {{ team.constructor }}, {{ team.engine_supplier }}, {{ team.nationality }}</option>
+            {% endfor %}
+            </select>
 
-    </div>
-    <button class = "button red" type = "submit">Add Driver</button>
-
+        </div>
+        <button class = "button red" type = "submit">Add Driver</button>
+    </form>
+</div>
 {% endblock %}

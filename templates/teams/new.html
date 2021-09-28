@@ -2,43 +2,44 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>Add a Team</h1>
+<div class="form_container">
+    <h1>Add a Team</h1>
 
 
-<form action = "/teams" method="post">
-    
-    <div>
-        <label for = "id">Team ID</label>
-        <input type = "INT" name = "id">
-    </div>
-    
-    <div>
-        <label for = "constructor">Constructor</label>
-        <input type = "text" name = "constructor">
-    </div>
+    <form action = "/teams" method="post" class="input_form">
+        
+        <div class="form_field">
+            <label for = "id">Team ID</label>
+            <input type = "INT" name = "id">
+        </div>
+        
+        <div class="form_field">
+            <label for = "constructor">Constructor</label>
+            <input type = "text" name = "constructor">
+        </div>
 
-    <div>
-        <label for = "engine_supplier">Engine Supplier</label>
-        <input type = "text" name = "engine_supplier">
-    </div>
+        <div class="form_field">
+            <label for = "engine_supplier">Engine Supplier</label>
+            <input type = "text" name = "engine_supplier">
+        </div>
 
-    <div>
-        <label for = "chassis">Chassis</label>
-        <input type = "text" name = "chassis">
-    </div>
+        <div class="form_field">
+            <label for = "chassis">Chassis</label>
+            <input type = "text" name = "chassis">
+        </div>
 
-    <div>
-        <label for = "engine_model">Engine Model</label>
-        <input type = "text" name = "engine_model">
-    </div>
+        <div class="form_field">
+            <label for = "engine_model">Engine Model</label>
+            <input type = "text" name = "engine_model">
+        </div>
 
-    <div>
-        <label for = "nationality">Nationality</label>
-        <input type = "text" name = "nationality">
-    </div>
+        <div class="form_field">
+            <label for = "nationality">Nationality</label>
+            <input type = "text" name = "nationality">
+        </div>
 
 
-    <button class = "button red" type = "submit">Add Team</button>
-
-  
+        <button class = "button red" type = "submit">Add Team</button>
+    </form>
+</div>
 {% endblock %}

@@ -2,58 +2,60 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>Edit a Race Result</h1>
+<div class="form_container">
+    <h1>Edit Race Result</h1>
 
 
-<form action = "/race_results/{{ race_result.driver.racing_number }}/{{ race_result.grand_prix.round }}" method="post">
-    <div>
-        <label for = "driver">Driver</label>
-        <select id = "driver" name = "driver" placeholder = "Driver" >
-        {% for driver in drivers %}
-        <option value = "{{ driver.racing_number}}"{% if race_result.driver.racing_number == driver.racing_number %} selected = "selected" {% endif %}>{{ driver.name }}</option>
-        {% endfor %}
-        </select>
-    </div>
-    <div>
-        <label for = "grand_prix">Grand Prix</label>
-        <select id = "grand_prix" name = "grand_prix" placeholder = "Grand Prix" >
-        {% for grand_prix in grands_prix %}
-        <option value = "{{ grand_prix.round }}"{% if race_result.grand_prix.round == grand_prix %} selected = "selected" {% endif %}>{{ grand_prix.name }}</option>
-        {% endfor %}
-        </select>
-    </div>
-    <div>
-        <label for = "position">Position</label>
-        <select id = "position" name = "position" placeholder = "Position" >
-            <option value = "" {% if race_result.position == None %} selected = "selected" {% endif %}></option>
-            {% for number in range(1, 21) %}
-            <option value = "{{ number }}"{% if race_result.position == number %} selected = "selected" {% endif %}>{{ number }}</option>
+    <form action = "/race_results/{{ race_result.driver.racing_number }}/{{ race_result.grand_prix.round }}" method="post" class="input_form">
+        <div class="form_field">
+            <label for = "driver">Driver</label>
+            <select id = "driver" name = "driver" placeholder = "Driver" >
+            {% for driver in drivers %}
+            <option value = "{{ driver.racing_number}}"{% if race_result.driver.racing_number == driver.racing_number %} selected = "selected" {% endif %}>{{ driver.name }}</option>
             {% endfor %}
-        </select>
-    </div>
-    <div>
-        <label for = "fastest_lap">Fastest Lap</label>
-        <input type = "checkbox" id = "fastest_lap" name = "fastest_lap" {% if race_result.fastest_lap == True %} checked {% endif %}>
-    </div>
-    <div>
-        <label for = "status">Status</label>
-        <select id = "status" name = "status">
-            <option value = ""{% if race_result.status == None %} selected = "selected" {% endif %}></option>
-            <option value = "DNS"{% if race_result.status == "DNS" %} selected = "selected" {% endif %}>DNS</option>
-            <option value = "Ret"{% if race_result.status == "Ret" %} selected = "selected" {% endif %}>Ret</option>
-            <option value = "DSQ" {% if race_result.status == "DSQ" %} selected = "selected" {% endif %}>DSQ</option>
-            <option value = "WD" {% if race_result.status == "WD" %} selected = "selected" {% endif %}>WD</option>
-        </select>
-    </div>
-    <div>
-        <label for = "sprint_position">Sprint Position</label>
-        <select id = "sprint_position" name = "sprint_position">
-            <option value = "" {% if race_result.sprint_position == None %} selected = "selected" {% endif %}></option>
-            {% for number in range(1, 4) %}
-            <option value = "{{ number }}" {% if race_result.sprint_position == number %} selected = "selected" {% endif %}>{{ number }}</option>
+            </select>
+        </div>
+        <div class="form_field">
+            <label for = "grand_prix">Grand Prix</label>
+            <select id = "grand_prix" name = "grand_prix" placeholder = "Grand Prix" >
+            {% for grand_prix in grands_prix %}
+            <option value = "{{ grand_prix.round }}"{% if race_result.grand_prix.round == grand_prix %} selected = "selected" {% endif %}>{{ grand_prix.name }}</option>
             {% endfor %}
-        </select>
-    </div>
-    <button class = "button black" type = "submit">Edit Race Result</button>
-</form>
+            </select>
+        </div>
+        <div class="form_field">
+            <label for = "position">Position</label>
+            <select id = "position" name = "position" placeholder = "Position" >
+                <option value = "" {% if race_result.position == None %} selected = "selected" {% endif %}></option>
+                {% for number in range(1, 21) %}
+                <option value = "{{ number }}"{% if race_result.position == number %} selected = "selected" {% endif %}>{{ number }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="form_field">
+            <label for = "fastest_lap">Fastest Lap</label>
+            <input type = "checkbox" id = "fastest_lap" name = "fastest_lap" {% if race_result.fastest_lap == True %} checked {% endif %}>
+        </div>
+        <div class="form_field">
+            <label for = "status">Status</label>
+            <select id = "status" name = "status">
+                <option value = ""{% if race_result.status == None %} selected = "selected" {% endif %}></option>
+                <option value = "DNS"{% if race_result.status == "DNS" %} selected = "selected" {% endif %}>DNS</option>
+                <option value = "Ret"{% if race_result.status == "Ret" %} selected = "selected" {% endif %}>Ret</option>
+                <option value = "DSQ" {% if race_result.status == "DSQ" %} selected = "selected" {% endif %}>DSQ</option>
+                <option value = "WD" {% if race_result.status == "WD" %} selected = "selected" {% endif %}>WD</option>
+            </select>
+        </div>
+        <div class="form_field">
+            <label for = "sprint_position">Sprint Position</label>
+            <select id = "sprint_position" name = "sprint_position">
+                <option value = "" {% if race_result.sprint_position == None %} selected = "selected" {% endif %}></option>
+                {% for number in range(1, 4) %}
+                <option value = "{{ number }}" {% if race_result.sprint_position == number %} selected = "selected" {% endif %}>{{ number }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <button class = "button black" type = "submit">Edit Race Result</button>
+    </form>
+</div>
 {% endblock %}
