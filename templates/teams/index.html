@@ -11,6 +11,7 @@
         <th>Chassis</th>
         <th>Engine Model</th>
         <th>Nationality</th>
+        <th></th>
     </tr>
     {% for team in teams %}
         <tr>
@@ -20,6 +21,13 @@
             <td>{{ team.chassis }}</td>
             <td>{{ team.engine_model }}</td>
             <td>{{ team.nationality }}</td>
+            <td>
+                <div class="buttons">
+                    <form class = "delete-form" action = "/teams/{{ team.id }}/delete" method = "POST">
+                        <button class = "trash-button"><i class = "fa fa-trash-o fa-3x"></i>Delete Team</button>
+                    </form>
+                </div>
+            </td>
         </tr>
     {% endfor %}
 </table>

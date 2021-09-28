@@ -27,10 +27,11 @@ def add_race_result():
     grand_prix_round = request.form['grand_prix']
     grand_prix = grand_prix_repository.select(grand_prix_round)
     position = request.form['position'] if request.form['position'] != "" else None
-    # fastest_lap = request.form['fastest_lap'] if request.form['position'] != None else None
+    
     fastest_lap = False
     if 'fastest_lap' in request.form:
         fastest_lap = True
+        
     status = request.form['status'] if request.form['status'] != "" else None
     sprint_position = request.form['sprint_position'] if request.form['sprint_position'] != "" else None
     race_result = Race_Result(driver, grand_prix, position, fastest_lap, status, sprint_position)
@@ -60,7 +61,7 @@ def update_race_result(racing_number, round):
     fastest_lap = False
     if 'fastest_lap' in request.form:
         fastest_lap = True
-        
+
     status = request.form['status'] if request.form['status'] != "" else None
     sprint_position = request.form['sprint_position'] if request.form['sprint_position'] != "" else None
     race_result = Race_Result(driver, grand_prix, position, fastest_lap, status, sprint_position)

@@ -33,7 +33,7 @@ CREATE TABLE race_results (
     position INT,
     fastest_lap BOOLEAN,
     status VARCHAR,
-    sprint_position INT
+    sprint_position INT,
     PRIMARY KEY (racing_number, grand_prix_round)
 );
 

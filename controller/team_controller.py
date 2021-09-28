@@ -26,3 +26,8 @@ def add_team():
     team = Team(id, constructor, engine_supplier, chassis, engine_model, nationality)
     team_repository.save(team)
     return redirect("/teams")
+
+@team_blueprint.route("/teams/<id>/delete", methods = ["POST"])
+def delete_team(id):
+    team_repository.delete(id)
+    return redirect('/teams')
