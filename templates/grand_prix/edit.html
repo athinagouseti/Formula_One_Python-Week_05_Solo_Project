@@ -17,16 +17,6 @@
         <input type = "text" id = "date" name = "date" value = "{{ grand_prix.date }}" required>
     </div>
 
-    <!-- <div>
-        <label for = "user">User</label>
-        <select id = "user" name = "user_id">
-            {% for user in all_users %}
-                <option value = "{{ user.id }}" {% if task.user.id == user.id %} selected = "selected" {% endif %}>{{ user.first_name }}</option>
-            {% endfor %}
-
-        </select>
-    </div> -->
-
     <button type = "submit">Update Grand Prix</button>
 
 </form>

@@ -27,6 +27,22 @@ def add_team():
     team_repository.save(team)
     return redirect("/teams")
 
+@team_blueprint.route("/teams/<id>/edit", methods = ['GET'])
+def edit_team(id):
+    team = team_repository.select(id)
+    return render_template("teams/edit.html", team = team)
+
+@team_blueprint.route("/teams/<id>", methods = ['POST'])
+def update_team(id):
+    constructor = request.form["constructor"]
+    engine_supplier = request.form['engine_supplier']
+    chassis = request.form['chassis']
+    engine_model = request.form['engine_model']
+    nationality = request.form['nationality']
+    team = Team(id, constructor, engine_supplier, chassis, engine_model, nationality)
+    team_repository.update(team)
+    return redirect("/teams")
+
 @team_blueprint.route("/teams/<id>/delete", methods = ["POST"])
 def delete_team(id):
     team_repository.delete(id)

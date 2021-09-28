@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<form action = "/teams/{{ team.id }}" method="post">
+    <!-- <div>
+        <label for = "id">Grand Prix ID</label>
+        <input type = "INT" id = "id" name = "id" value = "{{ team.id }}" required>
+    </div> -->
+
+    <div>
+        <label for = "constructor">Grand Prix Constructor</label>
+        <input type = "text" id = "constructor" name = "constructor" value = "{{ team.constructor }}" required>
+    </div>
+    <div>
+        <label for = "engine_supplier">Engine Supplier</label>
+        <input type = "text" id = "engine_supplier" name = "engine_supplier" value = "{{ team.engine_supplier }}" required>
+    </div>
+    <div>
+        <label for = "Chassis">Chassis</label>
+        <input type = "text" id = "chassis" name = "chassis" value = "{{ team.chassis }}" required>
+    </div>
+    <div>
+        <label for = "engine_model">Engine Model</label>
+        <input type = "text" id = "engine_model" name = "engine_model" value = "{{ team.engine_model }}" required>
+    </div>
+    <div>
+        <label for = "nationality">Nationality</label>
+        <input type = "text" id = "nationality" name = "nationality" value = "{{ team.nationality }}" required>
+    </div>
+
+    <button type = "submit">Update Team</button>
+
+</form>
+
+
+{% endblock %}
