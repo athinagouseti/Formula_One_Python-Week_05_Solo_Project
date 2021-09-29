@@ -37,7 +37,7 @@ CREATE TABLE race_results (
     PRIMARY KEY (racing_number, grand_prix_round)
 );
 
-
+CREATE EXTENSION tablefunc;
 
 INSERT INTO teams(id, constructor, engine_supplier, chassis, engine_model, nationality) VALUES (1, 'Alfa Romeo', 'Ferrari', 'C41', '065/6', 'Switzerland');
 INSERT INTO teams(id, constructor, engine_supplier, chassis, engine_model, nationality) VALUES (2, 'AlphaTauri', 'Honda', 'AT02', 'RA621H', 'Italy');
