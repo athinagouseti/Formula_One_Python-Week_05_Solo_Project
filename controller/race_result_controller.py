@@ -47,9 +47,9 @@ def edit_race_result(racing_number, round):
 
 @race_result_blueprint.route("/race_results/<racing_number>/<round>", methods = ['POST'])
 def update_race_result(racing_number, round):
-    racing_number = request.form['driver']
+    # racing_number = request.form['driver']
     driver = driver_repository.select(racing_number)
-    grand_prix_round = request.form['grand_prix']
+    # grand_prix_round = request.form['grand_prix']
     grand_prix = grand_prix_repository.select(round)
     position = request.form['position'] if request.form['position'] != "" else None
 
@@ -62,6 +62,8 @@ def update_race_result(racing_number, round):
     race_result = Race_Result(driver, grand_prix, position, fastest_lap, status, sprint_position)
     race_result_repository.update(race_result)
     return redirect("/race_results")
+
+   
 
 @race_result_blueprint.route("/race_results/<racing_number>/<round>/delete", methods = ["POST"])
 def delete_race_result(racing_number, round):

@@ -9,7 +9,7 @@
     <form action = "/race_results/{{ race_result.driver.racing_number }}/{{ race_result.grand_prix.round }}" method="post" class="input_form">
         <div class="form_field">
             <label for = "driver">Driver</label>
-            <select id = "driver" name = "driver" placeholder = "Driver" >
+            <select id = "driver" name = "driver" placeholder = "Driver" disabled>
             {% for driver in drivers %}
             <option value = "{{ driver.racing_number}}"{% if race_result.driver.racing_number == driver.racing_number %} selected = "selected" {% endif %}>{{ driver.name }}</option>
             {% endfor %}
@@ -17,7 +17,7 @@
         </div>
         <div class="form_field">
             <label for = "grand_prix">Grand Prix</label>
-            <select id = "grand_prix" name = "grand_prix" placeholder = "Grand Prix" >
+            <select id = "grand_prix" name = "grand_prix" placeholder = "Grand Prix" disabled>
             {% for grand_prix in grands_prix %}
             <option value = "{{ grand_prix.round }}"{% if race_result.grand_prix.round == grand_prix %} selected = "selected" {% endif %}>{{ grand_prix.name }}</option>
             {% endfor %}
