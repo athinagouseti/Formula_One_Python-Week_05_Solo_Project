@@ -37,14 +37,17 @@ def edit_driver(racing_number):
 
 @drivers_blueprint.route("/drivers/<racing_number>", methods = ['POST'])
 def update_driver(racing_number):
-    racing_number = request.form["racing_number"]
+    # racing_number = request.form["racing_number"]
     name = request.form["driver_name"]
+    # pdb.set_trace()
     nationality = request.form["driver_nationality"]
     team_id = request.form["team"]
     team = team_repository.select(int(team_id))
     driver = Driver(racing_number, name, nationality, team)
     driver_repository.update(driver)
     return redirect("/drivers")
+
+
 
 @drivers_blueprint.route("/drivers/<racing_number>/delete", methods = ["POST"])
 def delete_driver(racing_number):
