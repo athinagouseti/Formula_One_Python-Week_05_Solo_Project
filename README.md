@@ -5,7 +5,8 @@ You will be able to :
 * see the names of all the drivers in the championship, edit or delete them and even add a new one
 * see all the teams participating this year, edit or delete them and add a new one
 * keep on top of all the grands prix of the year 2021, edit, delete them or create a new one
-* view all the race results for each driver in each grand prix, edit or delete them and even add new ones.
+* view all the race results for each driver in each grand prix, edit or delete them and even add new ones
+* check out a table with all the drivers, their racing number, their teams and race result in each grand prix
 
 ## Before you start you wil need to :
 
