@@ -30,27 +30,35 @@ start Flask - flask run
 visit website - http://localhost:5000
 ```
 Homepage 
+
 ![](project_screenshots/Homepage.png)
 
 Drivers
+
 ![](project_screenshots/Drivers.png)
 
 Edit Driver
+
 ![](project_screenshots/Edit_Driver.png)
 
 Teams
+
 ![](project_screenshots/Teams.png)
 
 Edit Team
+
 ![](project_screenshots/Edit_Team.png)
 
 Race Result
+
 ![](project_screenshots/Race_result.png)
 
 Grand Prix
-![](project_screenshots/Grand_prix.png)
+
+![](project_screenshots/Grand_Prix.png)
 
 Championship
+
 ![](project_screenshots/Championship.png)
 
 
